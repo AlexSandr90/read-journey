@@ -1,68 +1,79 @@
+@import 'modern-normalize';
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--bg-main);
+  color: var(--color-white);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  /* Screens */
+  --mobile: 320px;
+  --mobile-adaptive: 375px;
+  --tablet: 768px;
+  --desktop: 1440px;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+  /* Animations */
+  --transition-duration: 250ms;
+  --transition-timing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-button: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-dropdown: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* z-indexes */
+  --z-dropdown: 100;
+  --z-modal: 1000;
+  --z-overlay: 900;
+
+  /* Buttons */
+  --button-height: 40px;
+  --button-radius: 20px;
+  --button-padding: 16px 32px;
+
+  /* Inputs */
+  --input-height: 42px;
+  --input-radius: 12px;
+  --input-padding: 14px 16px;
+
+  /* Containers */
+  --container-padding-mobile: 16px;
+  --container-padding-tablet: 32px;
+  --container-padding-desktop: 64px;
+
+  /* Colors */
+  --bg-main: #141414;
+  --color-white: #FFFFFF;
+  --color-black: #1F1F1F;
+  --color-accent: #FF4F4F;
+  --color-success: #30B94D;
+  --color-error: #E74E4E;
+  --color-gray-100: #F6F6F6;
+  --color-gray-200: #686868;
+  --color-gray-300: #262626;
+  --color-gray-400: #1F1F1F;
 }
 
 body {
   margin: 0;
   display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+/* Утиліти */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}

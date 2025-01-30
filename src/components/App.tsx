@@ -1,24 +1,32 @@
-import { useState } from 'react';
+import { lazy, Suspense } from 'react';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+
+import Header from './Header/Header';
+const WelcomePage = lazy(() => import('../pages/WelcomePage/WelcomePage'));
+const LibraryPage = lazy(() => import('../pages/LibraryPage/LibraryPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
+const ReadingPage = lazy(() => import('../pages/ReadingPage/ReadingPage'));
+const RecommendedPage = lazy(
+  () => import('../pages/RecommendedPage/RecommendedPage'),
+);
+const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 
 const App: React.FC = () => {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="container">
+      <Suspense fallback={<div>Loading...</div>}>
+        <Header />
+        <Routes>
+          <Route path="/" element={<WelcomePage />} />
+          <Route path="/library" element={<LibraryPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/reading" element={<ReadingPage />} />
+          <Route path="/recommended" element={<RecommendedPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Routes>
+      </Suspense>
+    </div>
   );
 };
 

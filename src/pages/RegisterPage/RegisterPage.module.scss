@@ -1,3 +1,15 @@
 .register {
     display: flex;
+    justify-content: space-between;
+    width: 1220px;
+    // width: 100%;
+}
+
+.register_page__section {
+    display: flex;
+    width: 600px;
+    height: 736px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: var(--color-black);
 }
