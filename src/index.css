@@ -1,4 +1,7 @@
-@import 'modern-normalize';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -8,6 +11,7 @@
   color-scheme: light dark;
   background-color: var(--bg-main);
   color: var(--color-white);
+  box-sizing: border-box;
 
   /* Screens */
   --mobile: 320px;
@@ -47,6 +51,8 @@
   /* Colors */
   --bg-main: #141414;
   --color-white: #FFFFFF;
+  --color-text-white: #F9F9F9;
+  --color-text-superman-gray: #e3e3e380;
   --color-black: #1F1F1F;
   --color-accent: #FF4F4F;
   --color-success: #30B94D;
@@ -76,4 +82,3 @@ body {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-

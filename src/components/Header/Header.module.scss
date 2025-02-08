@@ -1,0 +1,28 @@
+.logo {
+    &_block {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: 17px;
+        text-decoration: none;
+        color: var(--color-white);
+
+        gap: 4px;
+    }
+
+    &_text {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 18px;
+        /* 100% */
+        letter-spacing: 0.36px;
+        text-transform: uppercase;
+        height: 17px;
+        
+    }
+
+}
