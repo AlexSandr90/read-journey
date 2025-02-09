@@ -1,10 +1,11 @@
+import StartContainer from '../StartContainer/StartContainer';
 import css from './Hero.module.scss';
 
 const Hero = () => {
   return (
-    <div className={css.hero_block}>
+    <StartContainer>
       <div className={css.hero_img} />
-    </div>
+    </StartContainer>
   );
 };
 
