@@ -13,3 +13,5 @@ const mainSchema = yup.object().shape({
 });
 
 export const registerSchema = mainSchema.pick(['name', 'email', 'password']);
+
+export const loginSchema = mainSchema.pick(['email', 'password']);

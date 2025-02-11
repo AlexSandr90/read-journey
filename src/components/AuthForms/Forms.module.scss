@@ -1,4 +1,4 @@
-.register_form {
+.form {
     display: flex;
     flex-direction: column;
     row-gap: 24px;
@@ -6,27 +6,31 @@
     width: 100%;
 }
 
-.register_form__input_group {
+.form__input_group {
     width: 100%;
     max-width: 600px;
     position: relative;
 }
 
-.register_form__input {
+.form__input {
     border-radius: 12px;
     background: #262626;
     padding: 16px 304px 16px 14px;
     border: 1px solid transparent
 }
 
-.register_form__buttons_block {
+.form__buttons_block {
     display: flex;
     align-items: center;
     column-gap: 20px;
     margin-top: calc(32px - 14px);
 }
 
-.register_form__submit_btn {
+.logon_btns {
+    margin-top: calc(120px - 14px);
+}
+
+.form__submit_btn {
     display: flex;
     width: 225px;
     border-radius: 30px;
@@ -41,7 +45,7 @@
     letter-spacing: 0.4px;
 }
 
-.register_form__link {
+.form__link {
     color: #686868;
     font-size: 14px;
     font-weight: 500;

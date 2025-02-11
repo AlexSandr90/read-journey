@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import Button from '../Button/Button';
 
 interface RegisterFormInputs {
   name: string;
@@ -71,14 +72,14 @@ const RegisterForm = () => {
     <>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={` ${css.register_form}`}
+        className={` ${css.form}`}
       >
-        <div className={`space-y-2 ${css.register_form__input_group}`}>
+        <div className={`space-y-2 ${css.form__input_group}`}>
           <input
             {...register('name')}
             placeholder="Name"
             type="text"
-            className={`${getInputClassName(!!errors.name)} ${css.register_form__input}`}
+            className={`${getInputClassName(!!errors.name)} ${css.form__input}`}
           />
 
           {errors.name && (
@@ -88,12 +89,12 @@ const RegisterForm = () => {
           )}
         </div>
 
-        <div className={`space-y-2 ${css.register_form__input_group}`}>
+        <div className={`space-y-2 ${css.form__input_group}`}>
           <input
             {...register('email')}
             placeholder="Email"
             type="text"
-            className={`${getInputClassName(!!errors.email)} ${css.register_form__input}`}
+            className={`${getInputClassName(!!errors.email)} ${css.form__input}`}
           />
 
           {errors.email && (
@@ -103,12 +104,12 @@ const RegisterForm = () => {
           )}
         </div>
 
-        <div className={`space-y-2 ${css.register_form__input_group}`}>
+        <div className={`space-y-2 ${css.form__input_group}`}>
           <input
             {...register('password')}
             placeholder="Password"
             type="text"
-            className={`${getInputClassName(!!errors.password)} ${css.register_form__input}`}
+            className={`${getInputClassName(!!errors.password)} ${css.form__input}`}
           />
 
           {errors.password && (
@@ -118,12 +119,10 @@ const RegisterForm = () => {
           )}
         </div>
 
-        <div className={css.register_form__buttons_block}>
-          <button type="submit" className={css.register_form__submit_btn}>
-            Registration
-          </button>
+        <div className={css.form__buttons_block}>
+          <Button type="submit">Registration</Button>
 
-          <a href="/" className={css.register_form__link}>
+          <a href="/" className={css.form__link}>
             Already have an account?
           </a>
         </div>
